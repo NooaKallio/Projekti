@@ -1,4 +1,4 @@
 # Projekti
 Projektin teko
 
-Tiiminimi Voimakkaa valehtelijat
+Tiiminimi Voimakkaat valehtelijat
