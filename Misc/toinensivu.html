@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rat apocalypse</title>
+	<style>
+		form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+	</style>
+</head>
+<body>
+<form action="kolmassivu.html" method="post">
+		<label for="nimi">Kortinhaltijan nimi:</label><br>
+		<input type="text" id="nimi" name="nimi"><br>
+		<label for="korttinumero">Korttinumero:</label><br>
+		<input type="text" id="korttinumero" name="korttinumero"><br>
+		<label for="viimeinen_kk">Viimeinen voimassaolokuukausi:</label><br>
+		<input type="text" id="viimeinen_kk" name="viimeinen_kk"><br>
+		<label for="viimeinen_vv">Viimeinen voimassaolovuosi:</label><br>
+		<input type="text" id="viimeinen_vv" name="viimeinen_vv"><br>
+		<label for="cvc">CVC-turvakoodi:</label><br>
+		<input type="text" id="cvc" name="cvc"><br><br>
+		<input type="submit" value="Maksa">
+	</form>
+</body>
+</html>
