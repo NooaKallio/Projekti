@@ -6,6 +6,12 @@ public class GameOverMenu : MonoBehaviour
     public GameObject gameOverCanvas;
     private bool isGameOver = false;
 
+    private void Start()
+    {
+        gameOverCanvas.SetActive(false);
+        isGameOver= false;
+    }
+
     public void GameOver()
     {
         if (!isGameOver)
