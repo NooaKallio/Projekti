@@ -2,16 +2,25 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public int damage = 10;
+    public float bulletSpeed = 10f;
+    public int damage;
+
+    private float currentLifeSpan = 0f;
+    private float maxLifeSpan = 10f;
+
+    private void Update()
+    {
+        transform.Translate(Vector2.right * bulletSpeed * Time.deltaTime);
+
+        currentLifeSpan += Time.deltaTime;
+        if (currentLifeSpan >= maxLifeSpan)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
-            enemyHealth.TakeDamage(damage);
-        }
-
         Destroy(gameObject);
     }
 }

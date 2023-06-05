@@ -42,12 +42,15 @@ public class PlayerShooting : MonoBehaviour
     }
 
     void ShootAtEnemy(GameObject enemy)
-    {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce((enemy.transform.position - firePoint.position).normalized * bulletForce, ForceMode2D.Impulse);
+{
+    GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+    Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
 
-        Bullet bulletScript = bullet.GetComponent<Bullet>();
-        bulletScript.damage = bulletDamage;
-    }
+    Vector2 direction = (enemy.transform.position - firePoint.position).normalized;
+    rb.velocity = direction * bulletForce;
+
+    Bullet bulletScript = bullet.GetComponent<Bullet>();
+    bulletScript.damage = bulletDamage;
+}
+
 }

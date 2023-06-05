@@ -3,19 +3,20 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
-    public Transform[] spawnPoints;
-    public float spawnInterval = 3f;
+    public int maxEnemies = 20;
 
-    private void Start()
+    void Start()
     {
-        InvokeRepeating("SpawnEnemy", spawnInterval, spawnInterval);
+        SpawnEnemies();
     }
 
-    void SpawnEnemy()
+    void SpawnEnemies()
     {
-        int randomIndex = Random.Range(0, spawnPoints.Length);
-        Transform spawnPoint = spawnPoints[randomIndex];
-
-        Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        for (int i = 0; i < maxEnemies; i++)
+        {
+            Vector2 randomPosition = new Vector2(Random.Range(-10f, 10f), Random.Range(-5f, 5f));
+            Instantiate(enemyPrefab, randomPosition, Quaternion.identity);
+        }
     }
 }
+
