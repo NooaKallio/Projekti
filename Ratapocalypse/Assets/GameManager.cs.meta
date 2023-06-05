@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: cec9a52c25329c543905470111331fb2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - timerTextObject: {fileID: 340650602144966973, guid: 21a376e474dbc2346a6de48ed53f6d60, type: 3}
+  - gameOverMenu: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
